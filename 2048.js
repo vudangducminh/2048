@@ -14,6 +14,7 @@ function hash(i, j){
 
 let state = new Array(board.row + 1);
 let previous_state = new Array(board.row + 1);
+var current_score = 0;
 
 for(var i = 1; i <= board.row; i++){
     state[i] = new Array(board.col + 1).fill(0);
@@ -85,6 +86,7 @@ function move_left(){
             if(j < cnt){
                 if(a[j] == a[j + 1]){
                     state[i][crr] = a[j] + a[j + 1];
+                    current_score += a[j] * 2;
                     a[j] = a[j + 1] = 0;
                     crr++;
                 }
@@ -123,6 +125,7 @@ function move_right(){
             if(j > cnt){
                 if(a[j] == a[j - 1]){
                     state[i][crr] = a[j] + a[j - 1];
+                    current_score += a[j] * 2;
                     a[j] = a[j - 1] = 0;
                     crr--;
                 }
@@ -161,6 +164,7 @@ function move_up(){
             if(j < cnt){
                 if(a[j] == a[j + 1]){
                     state[crr][i] = a[j] + a[j + 1];
+                    current_score += a[j] * 2;
                     a[j] = a[j + 1] = 0;
                     crr++;
                 }
@@ -199,6 +203,7 @@ function move_down(){
             if(j > cnt){
                 if(a[j] == a[j - 1]){
                     state[crr][i] = a[j] + a[j - 1];
+                    current_score += a[j] * 2;
                     a[j] = a[j - 1] = 0;
                     crr--;
                 }
@@ -263,16 +268,20 @@ function getColor(val){
 }
 
 function update(){
+    let score = document.getElementById("Score2048");
+    score.textContent = "Score: " + current_score;
     for(var i = 1; i <= board.row; i++){
         for(var j = 1; j <= board.col; j++){
             let cell = document.getElementById(hash(i, j));
-            cell.textContent = state[i][j];
-            cell.style.backgroundColor = getColor(state[i][j]);
+            if(state[i][j]) cell.textContent = state[i][j];
+            else cell.textContent = "";
+            cell.style.backgroundColor = getColor(state[i][j]);   
         }
     }
 }
 
 function init(){
+    var score = document.createElement('Score');
     var table = document.createElement('table');
     for(var i = 1; i <= board.row; i++){
         var row = document.createElement('tr');
