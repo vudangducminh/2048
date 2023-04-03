@@ -1,0 +1,39 @@
+#design {
+    text-align: center;
+    background-color: green;
+}
+
+#Board2048 table {
+    border-collapse: collapse;
+    font-size: 150%;
+    font-family: sans-serif;
+    font-weight: bold;
+    display: inline-block;
+}
+
+#Score2048 {
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    background-color:white;
+    color: black;
+    font-weight: bolder;
+    border-radius: 20px 20px 20px 20px;
+}
+
+#Board2048 table td {
+    background-color: white;
+    width: 80px;
+    height: 80px;
+    border: 1px solid black; 
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    background-color:white;
+    color: black;
+    font-weight: bolder;
+    border-radius: 20px 20px 20px 20px;
+}
+
