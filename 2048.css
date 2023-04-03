@@ -3,6 +3,7 @@ body {
 }
 #design {
     text-align: center;
+    transition: 2s;
 }
 
 #Board2048 table {
@@ -11,6 +12,7 @@ body {
     font-family: sans-serif;
     font-weight: bold;
     display: inline-block;
+    transition: 2s;
 }
 
 #Score2048 {
@@ -30,6 +32,7 @@ body {
     width: 80px;
     height: 80px;
     border: 1px solid black; 
+    transition: 2s;
 }
 
 button {
