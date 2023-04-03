@@ -1,6 +1,8 @@
+body {
+    background-color: green;
+}
 #design {
     text-align: center;
-    background-color: green;
 }
 
 #Board2048 table {
@@ -12,7 +14,9 @@
 }
 
 #Score2048 {
-    width: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 120px;
     height: 30px;
     text-align: center;
     background-color:white;
@@ -29,7 +33,7 @@
 }
 
 button {
-    width: 100px;
+    width: 120px;
     height: 30px;
     background-color:white;
     color: black;
