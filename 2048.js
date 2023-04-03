@@ -321,5 +321,5 @@ document.onkeydown = (e) => {
 }
 
 function end_game(){
-    alert("Failure!!!");
+    alert("Imagine being a loser 🤣🤣🤣");
 }
